@@ -45,13 +45,13 @@ Here’s how we can incorporate your **Results** section into the README in a po
 Using the original `diabetes.csv` dataset, we evaluated multiple machine learning models. The key findings are as follows:
 
 - **Accuracy:**  
-  - **Decision Tree** and **Naive Bayes** performed best, achieving an accuracy of **76.6%**.
+  - **Decision Tree** performed best, achieving an accuracy of **77.27%**.
   
 - **Precision:**  
-  - **Naive Bayes** performed the best with a precision score of **66.1%**.
+  - **Decision Tree** performed the best with a precision score of **66.12%**.
   
 - **ROC-AUC:**  
-  - **Decision Tree** outperformed others with an AUC score of **76.16%**.
+  - **Decision Tree** outperformed others with an AUC score of **76.66%**.
 
 These results have been saved in the file `pima_diabetes.csv`.
 
@@ -63,7 +63,7 @@ To address the **class imbalance** in the Outcome variable, the following prepro
 2. **Standard Scaling:** To scale the data for consistent feature ranges.
 
 Post preprocessing, **Naive Bayes** outperformed all other models with the following metrics:
-- **Accuracy:** **76.6%**
+- **Accuracy:** **76.62%**
 - **Precision:** **66.1%**
 - **ROC-AUC:** **75.35%**
 
