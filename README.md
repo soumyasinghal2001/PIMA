@@ -44,14 +44,14 @@ Here’s how we can incorporate your **Results** section into the README in a po
 ### **Original Dataset**
 Using the original `diabetes.csv` dataset, we evaluated multiple machine learning models. The key findings are as follows:
 
-- **Accuracy:**  
-  - **Decision Tree** performed best, achieving an accuracy of **77.27%**.
-  
-- **Precision:**  
-  - **Decision Tree** performed the best with a precision score of **66.12%**.
-  
-- **ROC-AUC:**  
-  - **Decision Tree** outperformed others with an AUC score of **76.66%**.
+| **Metric**        | **Log_R** | **DT**  | **RF**  | **KNN** | **NB**  | **GB**  | **AB**  |
+|--------------------|-----------|---------|---------|---------|---------|---------|---------|
+| **Accuracy**       | 0.7468    | 0.7273  | 0.7662  | 0.6623  | 0.7662  | 0.7403  | 0.7338  |
+| **Precision**      | 0.6379    | 0.6032  | 0.6727  | 0.5246  | 0.6610  | 0.6271  | 0.6250  |
+| **F1 Score**       | 0.6549    | 0.6441  | 0.6727  | 0.5517  | 0.6842  | 0.6491  | 0.6306  |
+| **Recall**         | 0.6727    | 0.6909  | 0.6727  | 0.5818  | 0.7091  | 0.6727  | 0.6364  |
+| **ROC AUC**        | 0.7303    | 0.7192  | 0.7455  | 0.6444  | 0.7535  | 0.7253  | 0.7121  |
+
 
 These results have been saved in the file `pima_diabetes.csv`.
 
@@ -62,12 +62,42 @@ To address the **class imbalance** in the Outcome variable, the following prepro
 1. **Random Over-Sampling:** To balance the classes.
 2. **Standard Scaling:** To scale the data for consistent feature ranges.
 
-Post preprocessing, **Naive Bayes** outperformed all other models with the following metrics:
-- **Accuracy:** **76.62%**
-- **Precision:** **66.1%**
-- **ROC-AUC:** **75.35%**
+| **Metric**        | **Log_R** | **DT**  | **RF**  | **KNN** | **NB**  | **GB**  | **AB**  |
+|--------------------|-----------|---------|---------|---------|---------|---------|---------|
+| **Accuracy**       | 0.7468    | 0.7468  | 0.7468  | 0.6623  | 0.7662  | 0.7468  | 0.7338  |
+| **Precision**      | 0.6379    | 0.6212  | 0.6429  | 0.5246  | 0.6610  | 0.6379  | 0.6250  |
+| **F1 Score**       | 0.6549    | 0.6777  | 0.6486  | 0.5517  | 0.6842  | 0.6549  | 0.6306  |
+| **Recall**         | 0.6727    | 0.7455  | 0.6545  | 0.5818  | 0.7091  | 0.6727  | 0.6364  |
+| **ROC AUC**        | 0.7303    | 0.7465  | 0.7263  | 0.6444  | 0.7535  | 0.7303  | 0.7121  |
+
 
 The results for this analysis are saved in `pima_diabetes_scaled.csv`.
+
+
+
+### Observations and Insights
+
+1. **Logistic Regression (Log_R)**:  
+   - Performance metrics such as accuracy and F1 score remained consistent before and after scaling, showing minimal sensitivity to feature scaling.
+
+2. **Decision Tree (DT)**:  
+   - Scaling led to improvements across most metrics, particularly in recall (0.6909 → 0.7455) and F1 score (0.6441 → 0.6777).
+
+3. **Random Forest (RF)**:  
+   - RF showed consistent accuracy before and after scaling but saw slight variations in metrics like recall and ROC AUC.
+
+4. **K-Nearest Neighbors (KNN)**:  
+   - No noticeable performance gain was observed, with accuracy and F1 score remaining nearly identical.
+
+5. **Naive Bayes (NB)**:  
+   - Naive Bayes performed robustly both before and after scaling, with high recall and F1 scores.
+
+6. **Gradient Boosting (GB)**:  
+   - Performance improved in recall and F1 score after scaling, indicating better handling of imbalanced data.
+
+7. **AdaBoost (AB)**:  
+   - Scaling had minimal impact, with most metrics staying consistent, showcasing its robustness.
+
 
 ---
 
